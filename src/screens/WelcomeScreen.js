@@ -17,7 +17,7 @@ const WelcomeScreen = () => {
             <Background />
             <HeaderGroup />
 
-            <View style={[Styles.alignItemsCenter, { flex: 1 }]}>
+            <View style={[Styles.alignItemsCenter, { flex: 1, marginTop: -35 }]}>
                 <Image
                     source={Constants.ALTA_VIDEO}
                     style={styles.altaVideo} />
@@ -61,6 +61,7 @@ const styles = StyleSheet.create({
     containerBottom: {
         flex: 1,
         paddingHorizontal: 32,
+        marginTop: 20
     },
     iconScan: {
         width: 35,
