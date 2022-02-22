@@ -1,5 +1,7 @@
-import LogoAlta from "./LogoAlta";
+import HeaderGroup from "./HeaderGroup";
+import Background from "./Background";
 
 export {
-    LogoAlta
+    HeaderGroup,
+    Background
 }
