@@ -11,6 +11,7 @@ const Constants = {
     SCAN_AREA: require('../assets/scan_area.png'),
     DOUBLE_ARROW: require('../assets/double_arrow.png'),
     ERROR_CARD: require('../assets/error_card.png'),
+    OUT_NOODLES_CUP: require('../assets/out_noodles.png'),
 }
 
 export default Constants;

@@ -2,14 +2,14 @@ import { Image, StyleSheet, View } from 'react-native'
 import React from 'react'
 import { Constants } from '../ultils';
 
-const HeaderGroup = ({title}) => {
+const HeaderGroup = ({ title, titleWidth }) => {
     return (
         <View style={styles.headerGroup}>
             <Image
                 source={Constants.LOGO_IMG}
                 style={styles.logo} />
             <Image
-                style={styles.title}
+                style={[styles.title, { width: titleWidth ? titleWidth : 140 }]}
                 source={title} />
         </View>
     )
