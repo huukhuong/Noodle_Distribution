@@ -3,24 +3,33 @@ import {
     StatusBar,
     View,
     Image,
-    Text
+    Text,
+    TouchableOpacity
 } from 'react-native'
 import React from 'react'
 import { Colors, Constants, FontSizes, Styles } from '../ultils'
 import { Background, HeaderGroup } from '../components';
 
-const WelcomeScreen = () => {
+const ErrorScreen = () => {
     return (
         <View style={Styles.container}>
             <StatusBar backgroundColor={Colors.BLACK} />
             <Background />
             <HeaderGroup
-                title={Constants.WELCOME_IMG} />
+                title={Constants.ERROR_IMG} />
 
             <View style={[Styles.alignItemsCenter, { flex: 1, marginTop: -35 }]}>
-                <Image
-                    source={Constants.ALTA_VIDEO}
-                    style={styles.altaVideo} />
+                <Text style={[Styles.textWhite, styles.alert]}>
+                    Can not recongnize your ID card.
+                </Text>
+                <TouchableOpacity
+                    activeOpacity={.7}
+                    style={styles.button}>
+                    <Text style={[Styles.textWhite, Styles.textBold]}>
+                        Please scan again
+                    </Text>
+                </TouchableOpacity>
+                <Image source={Constants.ERROR_CARD} style={styles.errorCard} />
             </View>
 
             <View style={styles.containerBottom}>
@@ -50,13 +59,22 @@ const WelcomeScreen = () => {
     )
 }
 
-export default WelcomeScreen;
+export default ErrorScreen
 
 const styles = StyleSheet.create({
-    altaVideo: {
-        width: 305,
-        height: 170,
-        resizeMode: 'stretch'
+    alert: {
+        marginBottom: 10
+    },
+    button: {
+        backgroundColor: Colors.ORANGE,
+        borderRadius: 5,
+        paddingHorizontal: 12,
+        paddingVertical: 10
+    },
+    errorCard: {
+        width: 110,
+        height: 131,
+        marginTop: 30
     },
     containerBottom: {
         flex: 1,

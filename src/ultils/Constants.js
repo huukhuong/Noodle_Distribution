@@ -10,6 +10,7 @@ const Constants = {
     IC_SCAN: require('../assets/ic_scan.png'),
     SCAN_AREA: require('../assets/scan_area.png'),
     DOUBLE_ARROW: require('../assets/double_arrow.png'),
+    ERROR_CARD: require('../assets/error_card.png'),
 }
 
 export default Constants;

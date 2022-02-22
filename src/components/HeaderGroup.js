@@ -2,7 +2,7 @@ import { Image, StyleSheet, View } from 'react-native'
 import React from 'react'
 import { Constants } from '../ultils';
 
-const HeaderGroup = () => {
+const HeaderGroup = ({title}) => {
     return (
         <View style={styles.headerGroup}>
             <Image
@@ -10,7 +10,7 @@ const HeaderGroup = () => {
                 style={styles.logo} />
             <Image
                 style={styles.title}
-                source={Constants.WELCOME_IMG} />
+                source={title} />
         </View>
     )
 }
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
         marginTop: 30
     },
     title: {
-        width: 160,
+        width: 140,
         height: 35,
         resizeMode: 'stretch'
     }

@@ -37,6 +37,9 @@ const Styles = StyleSheet.create({
     textCenter: {
         width: '100%',
         textAlign: 'center'
+    },
+    textWhite: {
+        color: '#fff'
     }
 });
 
