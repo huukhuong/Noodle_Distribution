@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
         height: 69,
         resizeMode: 'stretch',
         marginBottom: 45,
-        marginTop: 18
+        marginTop: 30
     },
     title: {
         width: 160,
