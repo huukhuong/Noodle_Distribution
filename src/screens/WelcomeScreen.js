@@ -13,7 +13,7 @@ import { Background, HeaderGroup } from '../components';
 const WelcomeScreen = () => {
     return (
         <View style={Styles.container}>
-            <StatusBar hidden />
+            <StatusBar backgroundColor={Colors.BLACK} />
             <Background />
             <HeaderGroup />
 
