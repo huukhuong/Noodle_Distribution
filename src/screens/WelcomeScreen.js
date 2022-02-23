@@ -3,10 +3,9 @@ import {
     StatusBar,
     View,
     Image,
-    Text
 } from 'react-native'
 import React from 'react'
-import { Colors, Constants, FontSizes, Styles } from '../ultils'
+import { Colors, Constants, Styles } from '../ultils'
 import { Background, FotterGroup, HeaderGroup } from '../components';
 
 const WelcomeScreen = () => {

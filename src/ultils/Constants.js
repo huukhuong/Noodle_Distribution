@@ -17,6 +17,8 @@ const Constants = {
     NOODLE_CUP_UNAVAILABLE_IMG: require('../assets/noodle_cup_unavailable.png'),
     THREE_CUP_OF_NOODLES_LEFT_THIS_MONTH: require('../assets/3_cups_of_noodles_left_this_month.png'),
     BTN_GET_NOODLES: require('../assets/btn_get_noodles.png'),
+    BTN_BACK_TO_HOME: require('../assets/btn_back_to_home.png'),
+    DOUBLE_ARROW_DOWN: require('../assets/double_arrow_down.png'),
 }
 
 export default Constants;

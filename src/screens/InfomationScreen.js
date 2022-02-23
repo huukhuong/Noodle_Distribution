@@ -51,6 +51,7 @@ const InfomationScreen = () => {
                 <Image
                     source={Constants.THREE_CUP_OF_NOODLES_LEFT_THIS_MONTH}
                     style={{
+                        marginTop: 5,
                         alignSelf: 'center',
                         resizeMode: 'center'
                     }} />
