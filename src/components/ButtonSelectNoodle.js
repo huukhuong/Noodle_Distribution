@@ -25,7 +25,8 @@ export default ButtonSelectNoodle
 
 const styles = StyleSheet.create({
     cupNoodle: {
-        width: 110,
-        height: 131
+        marginTop: 10,
+        width: 100,
+        height: 121
     }
 })
