@@ -4,7 +4,6 @@ import {
     View,
     Image,
     Text,
-    TouchableOpacity
 } from 'react-native'
 import React from 'react'
 import { Colors, Constants, Styles } from '../ultils'
@@ -69,8 +68,8 @@ const styles = StyleSheet.create({
         width: 156 / 2,
         height: 271 / 2,
         resizeMode: 'stretch',
-        marginBottom: 20,
-        marginHorizontal: 10
+        marginBottom: 30,
+        marginHorizontal: 8
     },
     noodleCupLarge: {
         width: 110,

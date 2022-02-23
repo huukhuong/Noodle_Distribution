@@ -12,6 +12,11 @@ const Constants = {
     DOUBLE_ARROW: require('../assets/double_arrow.png'),
     ERROR_CARD: require('../assets/error_card.png'),
     OUT_NOODLES_CUP: require('../assets/out_noodles.png'),
+    NOODLE_CUP_NO_PICK_IMG: require('../assets/noodle_cup_no_pick.png'),
+    NOODLE_CUP_PICKED_IMG: require('../assets/noodle_cup_picked.png'),
+    NOODLE_CUP_UNAVAILABLE_IMG: require('../assets/noodle_cup_unavailable.png'),
+    THREE_CUP_OF_NOODLES_LEFT_THIS_MONTH: require('../assets/3_cups_of_noodles_left_this_month.png'),
+    BTN_GET_NOODLES: require('../assets/btn_get_noodles.png'),
 }
 
 export default Constants;
