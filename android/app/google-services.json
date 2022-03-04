@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "34491602586",
+    "project_id": "alta-noodle-distribution",
+    "storage_bucket": "alta-noodle-distribution.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:34491602586:android:4813bfcc5d27379c703123",
+        "android_client_info": {
+          "package_name": "com.noodle_distribution"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "34491602586-g88odg5ach91cuef7rgj304a56c8n9cv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.noodle_distribution",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "34491602586-j92m20snjudgv10f7osqn2qjck2ok7e5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDv5HVNsGZ6lv3jNgPLHqx_hG8zJ1CYbSk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "34491602586-j92m20snjudgv10f7osqn2qjck2ok7e5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
