@@ -1,4 +1,4 @@
-import { ImageBackground, StyleSheet } from 'react-native'
+import { Dimensions, ImageBackground, StyleSheet } from 'react-native'
 import React from 'react'
 import { Constants } from '../ultils'
 
@@ -15,9 +15,10 @@ export default Background
 const styles = StyleSheet.create({
     background: {
         position: 'absolute',
+        left: 0,
         top: 0,
         bottom: 0,
-        right: 0,
-        left: 0,
+        width: Dimensions.get('window').width,
+        minHeight: Dimensions.get('window').height,
     }
 })
