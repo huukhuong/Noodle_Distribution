@@ -6,15 +6,46 @@ import {
     Text,
     TouchableOpacity,
 } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Colors, Constants, Styles } from '../ultils'
 import { Background, ButtonSelectNoodle, HeaderGroup, InfomationBox } from '../components';
+import auth from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
+import storage from '@react-native-firebase/storage';
 
-const InfomationScreen = () => {
+const InfomationScreen = ({ navigation }) => {
 
-    const [cup1, setCup1] = useState(false);
-    const [cup2, setCup2] = useState(false);
-    const [cup3, setCup3] = useState(false);
+    const [cups, setCups] = useState([false, false, false]);
+
+    const [avatar, setAvatar] = useState('https://www.chanchao.com.tw/vietnamwood/images/default.jpg');
+    const [fullname, setFullname] = useState('loading...');
+    const [birthday, setBirthday] = useState('loading...');
+    const [gender, setGender] = useState('loading...');
+    const [department, setDepartment] = useState('loading...');
+
+    useEffect(() => {
+        firestore()
+            .collection('Users')
+            .doc(auth().currentUser.email)
+            .get()
+            .then(data => {
+                // get user info from firestore
+                const user = data._data;
+                setFullname(user.fullname);
+                setBirthday(user.birthday);
+                setGender(user.gender);
+                setDepartment(user.department);
+
+                // get image on storage
+                storage()
+                    .ref(user.avatar)
+                    .getDownloadURL()
+                    .then(url => setAvatar(url))
+                    .catch(e => console.log(e));
+            });
+    }, []);
+
+
 
     return (
         <View style={Styles.container}>
@@ -26,11 +57,11 @@ const InfomationScreen = () => {
 
             <View style={{ flex: 1, paddingHorizontal: 24 }}>
                 <InfomationBox
-                    avatar={{ uri: 'https://bitly.com.vn/b41kba' }}
-                    fullName={'Angelina'}
-                    birthday={'28/12/1996'}
-                    gender={'Female'}
-                    department={'Singer'} />
+                    avatar={{ uri: avatar }}
+                    fullName={fullname}
+                    birthday={birthday}
+                    gender={gender}
+                    department={department} />
 
                 <View style={[
                     Styles.row,
@@ -39,14 +70,14 @@ const InfomationScreen = () => {
                     { marginTop: 15 }
                 ]}>
                     <ButtonSelectNoodle
-                        onPress={() => setCup1(!cup1)}
-                        isPicked={cup1} />
+                        onPress={() => setCups([!cups[0], cups[1], cups[2]])}
+                        isPicked={cups[0]} />
                     <ButtonSelectNoodle
-                        onPress={() => setCup2(!cup2)}
-                        isPicked={cup2} />
+                        onPress={() => setCups([cups[0], !cups[1], cups[2]])}
+                        isPicked={cups[1]} />
                     <ButtonSelectNoodle
-                        onPress={() => setCup3(!cup3)}
-                        isPicked={cup3} />
+                        onPress={() => setCups([cups[0], cups[1], !cups[2]])}
+                        isPicked={cups[2]} />
                 </View>
                 <Image
                     source={Constants.THREE_CUP_OF_NOODLES_LEFT_THIS_MONTH}
@@ -56,7 +87,8 @@ const InfomationScreen = () => {
                         resizeMode: 'center'
                     }} />
                 <TouchableOpacity
-                    activeOpacity={.8}>
+                    activeOpacity={.8}
+                    onPress={() => navigation.navigate('Done')}>
                     <Image
                         source={Constants.BTN_GET_NOODLES}
                         style={{

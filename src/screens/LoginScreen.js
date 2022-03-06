@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Colors, Constants, Styles } from '../ultils'
 import { Background, HeaderGroup } from '../components';
 import auth from '@react-native-firebase/auth';
-import firestore from '@react-native-firebase/firestore';
+import ProgressDialog from 'react-native-progress-dialog';
 
 const LoginScreen = ({ navigation }) => {
 
@@ -11,12 +11,17 @@ const LoginScreen = ({ navigation }) => {
     const [password, setPassword] = useState('');
     const [erroremail, setErrorEmail] = useState('');
     const [errorPassword, setErrorPassword] = useState('');
+    const [progressShow, setProgressShow] = useState(false);
 
     const onPressLogin = () => {
+        console.log(email);
+        setProgressShow(true);
         auth()
             .signInWithEmailAndPassword(email, password)
             .then(() => {
-
+                console.log('Logged in');
+                setProgressShow(false);
+                navigation.navigate('Infomation');
             })
             .catch((error) => {
                 setErrorEmail('');
@@ -36,13 +41,13 @@ const LoginScreen = ({ navigation }) => {
         }
     }, [])
 
-
     return (
         <View style={[Styles.container, Styles.alignItemsCenter, Styles.justifyContentCenter]}>
             <StatusBar backgroundColor={Colors.BLACK} />
             <Background />
             <HeaderGroup
                 title={Constants.WELCOME_IMG} />
+            <ProgressDialog visible={progressShow} />
 
             <View style={styles.formGroup}>
                 <TextInput style={styles.formControl}

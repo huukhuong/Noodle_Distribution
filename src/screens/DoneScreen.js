@@ -8,9 +8,17 @@ import {
 } from 'react-native'
 import React from 'react'
 import { Colors, Constants, FontSizes, Styles } from '../ultils'
-import { Background, FotterGroup, HeaderGroup } from '../components';
+import { Background, HeaderGroup } from '../components';
+import auth from '@react-native-firebase/auth';
 
-const DoneScreen = () => {
+const DoneScreen = ({ navigation }) => {
+
+    const logOut = () => {
+        auth()
+            .signOut()
+            .then(() => navigation.navigate('Login'));
+    }
+
     return (
         <View style={Styles.container}>
             <StatusBar backgroundColor={Colors.BLACK} />
@@ -37,7 +45,8 @@ const DoneScreen = () => {
                 </Text>
 
                 <TouchableOpacity
-                    activeOpacity={.8}>
+                    activeOpacity={.8}
+                    onPress={logOut}>
                     <Image
                         source={Constants.BTN_BACK_TO_HOME}
                         style={{
