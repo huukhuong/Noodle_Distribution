@@ -3,7 +3,6 @@ import {
     StatusBar,
     View,
     Image,
-    Text,
     TouchableOpacity,
 } from 'react-native'
 import React, { useEffect, useState } from 'react'
@@ -17,7 +16,7 @@ const InfomationScreen = ({ navigation }) => {
 
     const [cups, setCups] = useState([false, false, false]);
 
-    const [avatar, setAvatar] = useState('https://www.chanchao.com.tw/vietnamwood/images/default.jpg');
+    const [avatar, setAvatar] = useState({ uri: 'https://www.chanchao.com.tw/vietnamwood/images/default.jpg' });
     const [fullname, setFullname] = useState('loading...');
     const [birthday, setBirthday] = useState('loading...');
     const [gender, setGender] = useState('loading...');
@@ -40,12 +39,10 @@ const InfomationScreen = ({ navigation }) => {
                 storage()
                     .ref(user.avatar)
                     .getDownloadURL()
-                    .then(url => setAvatar(url))
-                    .catch(e => console.log(e));
+                    .then(url => setAvatar({ uri: url }))
+                    .catch(e => setAvatar({ uri: 'https://www.chanchao.com.tw/vietnamwood/images/default.jpg' }));
             });
-    }, []);
-
-
+    }, [navigation]);
 
     return (
         <View style={Styles.container}>
@@ -56,12 +53,14 @@ const InfomationScreen = ({ navigation }) => {
                 titleWidth={260} />
 
             <View style={{ flex: 1, paddingHorizontal: 24 }}>
-                <InfomationBox
-                    avatar={{ uri: avatar }}
-                    fullName={fullname}
-                    birthday={birthday}
-                    gender={gender}
-                    department={department} />
+                <TouchableOpacity onPress={() => navigation.navigate('EditProfile')}>
+                    <InfomationBox
+                        avatar={avatar}
+                        fullName={fullname}
+                        birthday={birthday}
+                        gender={gender}
+                        department={department} />
+                </TouchableOpacity>
 
                 <View style={[
                     Styles.row,

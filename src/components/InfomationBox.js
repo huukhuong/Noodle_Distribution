@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
         width: 90,
         height: 90,
         borderRadius: 500,
-        resizeMode: 'center'
+        resizeMode: 'cover'
     },
     infomationText: {
         marginVertical: 4,

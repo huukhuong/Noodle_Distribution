@@ -37,6 +37,8 @@ const LoginScreen = ({ navigation }) => {
 
     useEffect(() => {
         if (auth().currentUser) {
+            console.log('Logged in');
+            setProgressShow(false);
             navigation.navigate('Infomation');
         }
     }, [])
