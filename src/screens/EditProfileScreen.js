@@ -78,10 +78,10 @@ const EditProfileScreen = ({ navigation }) => {
             .doc(auth().currentUser.email)
             .set({
                 avatar: filename,
-                birthday: "25/10/2001",
-                department: "Internship",
-                fullname: "Trần Hữu Khương",
-                gender: "Male"
+                birthday: birthday,
+                department: department,
+                fullname: fullname,
+                gender: gender
             });
         if (oldAvatar != avatar) {
             console.log('Start upload');
