@@ -3,6 +3,6 @@ ALTA SOFWARE INTERNSHIP FIRST PROJECT
 
 ## Screens
 
-<img src="./screenshot/sc1.png" />
-<img src="./screenshot/sc2.png" />
-<img src="./screenshot/sc3.png" />
+<img src="./screenshots/sc1.png" />
+<img src="./screenshots/sc2.png" />
+<img src="./screenshots/sc3.png" />
